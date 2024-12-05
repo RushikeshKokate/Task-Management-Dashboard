@@ -1,16 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./UI/Navbar";
+import SideBar from "./UI/SideBar";
+import Home from "./UI/Home";
+import "./App.css";
+import Card from "./UI/Card1";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      App
-    </>
-  )
+    <div className="dashboard">
+      <div className="flex">
+        <SideBar />
+        <div className="w-full ">
+          <Navbar />
+
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;
